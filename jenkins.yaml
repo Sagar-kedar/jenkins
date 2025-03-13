@@ -1,0 +1,25 @@
+jenkins:
+  systemMessage: "Welcome to Jenkins configured with JCasC"
+  numExecutors: 2
+
+  # Jenkins Security Configuration
+  securityRealm:
+    local:
+      users:
+        - username: "admin"
+          password: "admin123"
+          fullName: "Admin User"
+  authorizationStrategy:
+    loggedInUsersCanDoAnything:
+      allowAnonymousRead: true
+
+  # Configure Jenkins tools (e.g., JDK)
+  tools:
+    jdk:
+      - name: "JDK 11"
+        home: "/usr/lib/jvm/java-11-openjdk-amd64"
+
+  # Configure global environment variables
+  environmentVariables:
+    - name: "MY_ENV_VAR"
+      value: "some_value"

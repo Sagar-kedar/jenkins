@@ -1,0 +1,3 @@
+controller:
+  installPlugins:
+    - "configuration-as-code"
