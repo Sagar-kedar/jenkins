@@ -5,3 +5,4 @@ freeStyleJob('my-freestyle-job') {
     steps {
         shell('echo "Hello, world!"')
     }
+}    
