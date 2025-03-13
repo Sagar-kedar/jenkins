@@ -1,20 +1,7 @@
-pipeline {
-    agent any 
-    stages {
-        stage('Build') { 
-            steps {
-                echo "This is Build stage..."
-            }
-        }
-        stage('Test') { 
-            steps {
-                echo "This is Test stage." 
-            }
-        }
-        stage('Deploy') { 
-            steps {
-                echo "This is Deploy stage." 
-            }
-        }
+freeStyleJob('my-freestyle-job') {
+    description('This is a sample freestyle job')
+
+    // Configure job tasks
+    steps {
+        shell('echo "Hello, world!"')
     }
-}
