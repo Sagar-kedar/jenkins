@@ -520,13 +520,13 @@ controller:
       git-job: |
         jobs:
           - script: >
-              freestylejob('seed-job') {
-                description('Seed job to generate pipeline jobs from the tools Git repository.')
+              job('seed-job') {
+                  description('Seed job to generate pipeline jobs from the tools Git repository.')
                   scm {
-                    git {
-                      remote {
-                          url('https://github.com/Sagar-kedar/jenkins.git')
-                              credentials('githubcred')
+                      git {
+                          remote {
+                              url('https://github.com/Sagar-kedar/jenkins.git')
+                              credentials('githubcred') // Use credentials ID
                           }
                           branch('main') 
                       }
