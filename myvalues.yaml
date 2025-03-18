@@ -517,26 +517,15 @@ controller:
       welcome-message: |
         jenkins:
           systemMessage: Welcome to our CI\CD server. This Jenkins is configured and managed 'as code'.
-      
-      credentials: |
-        system:
-          domainCredentials:
-            - credentials:
-                - usernamePassword:
-                    scope: GLOBAL
-                    id: "docker-hub-secret"
-                    username: ""
-                    password: ""
-
       git-job: |
         jobs:
           - script: >
-              job('seed-job') {
-                  description('Seed job to generate pipeline jobs from the tools Git repository.')
+              freestylejob('seed-job') {
+                description('Seed job to generate pipeline jobs from the tools Git repository.')
                   scm {
-                      git {
-                          remote {
-                              url('https://github.com/Sagar-kedar/jenkin-pipeline.git')
+                    git {
+                      remote {
+                          url('https://github.com/Sagar-kedar/jenkins.git')
                               credentials('githubcred')
                           }
                           branch('main') 
@@ -544,7 +533,7 @@ controller:
                   }
                   steps {
                       dsl {
-                          external('jenkin-pipeline/jobs/*.groovy')
+                          external('jenkins/jobs/*.groovy')
                           removeAction('DELETE')              
                       }
                   }
