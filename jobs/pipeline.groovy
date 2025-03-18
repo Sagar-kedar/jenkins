@@ -1,12 +1,10 @@
 pipelineJob('MyPipelineJob') {
-    description('This is a pipeline job created with Job DSL')
-    
+    description('This is a pipeline job created with Job DSL')   
     definition {
         cps {
             script("""
                 pipeline {
-                    agent any
-                    
+                    agent any                    
                     stages {
                         stage('Build') {
                             steps {

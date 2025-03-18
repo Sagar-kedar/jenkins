@@ -533,7 +533,7 @@ controller:
                   }
                   steps {
                       dsl {
-                          external('jenkins/jobs/*.groovy')
+                          external('jenkins/jobs/pipeline.groovy')
                           removeAction('DELETE')              
                       }
                   }
